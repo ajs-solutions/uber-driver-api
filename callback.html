@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Uber OAuth Callback</title>
+</head>
+
+<body>
+
+<h2>Uber Authorization Received</h2>
+
+<div id="result"></div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const code = params.get("code");
+const state = params.get("state");
+
+document.getElementById("result").innerHTML = `
+<p><b>Authorization Code:</b> ${code}</p>
+<p><b>State:</b> ${state}</p>
+`;
+
+</script>
+
+</body>
+</html>
